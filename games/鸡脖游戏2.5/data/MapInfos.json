@@ -1,0 +1,17 @@
+[
+null,
+{"id":1,"expanded":true,"name":"卧室","order":2,"parentId":3,"scrollX":832,"scrollY":640},
+{"id":2,"expanded":true,"name":"开场","order":3,"parentId":1,"scrollX":698,"scrollY":452.5},
+{"id":3,"expanded":true,"name":"家（客厅）","order":1,"parentId":0,"scrollX":698,"scrollY":452.5},
+{"id":4,"expanded":false,"name":"厨房","order":4,"parentId":3,"scrollX":698,"scrollY":452.5},
+{"id":5,"expanded":true,"name":"世界","order":5,"parentId":0,"scrollX":698,"scrollY":452.5},
+{"id":6,"expanded":true,"name":"商店门口","order":6,"parentId":5,"scrollX":698,"scrollY":452.5},
+{"id":7,"expanded":true,"name":"商店","order":7,"parentId":6,"scrollX":698,"scrollY":452.5},
+{"id":8,"expanded":true,"name":"仓库","order":8,"parentId":7,"scrollX":690,"scrollY":560.5},
+{"id":9,"expanded":true,"name":"暗门之后","order":9,"parentId":8,"scrollX":698,"scrollY":452.5},
+{"id":10,"expanded":true,"name":"暗门之后之后","order":10,"parentId":9,"scrollX":832,"scrollY":640},
+{"id":11,"expanded":true,"name":"全带走","order":11,"parentId":10,"scrollX":698,"scrollY":452.5},
+{"id":12,"expanded":true,"name":"卧室","order":12,"parentId":11,"scrollX":698,"scrollY":452.5},
+{"id":13,"expanded":true,"name":"小路","order":13,"parentId":5,"scrollX":832,"scrollY":640},
+{"id":14,"expanded":false,"name":"小路2","order":14,"parentId":13,"scrollX":698,"scrollY":452.5}
+]
