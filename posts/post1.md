@@ -13,9 +13,3 @@
 
 
 [下载](downloads/不知道有什么用的封包lua程序.exe)
-`单行代码`
-
-// 代码块
-function hello() {
-    console.log("Hello World!");
-}

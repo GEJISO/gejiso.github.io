@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "测试",
-            "date": "2025/3/17",
+            "date": "2025-3-17",
             "excerpt": "无用111",
             "contentFile": "posts/post1.md",
             "downloadFile": "downloads/不知道有什么用的封包lua程序.exe"
