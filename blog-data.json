@@ -1,0 +1,12 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "JavaScript最佳实践",
+            "date": "2024-03-20",
+            "excerpt": "分享JavaScript开发中的实用技巧",
+            "contentFile": "posts/post1.md",
+            "downloadFile": "downloads/demo.zip"
+        }
+    ]
+}
