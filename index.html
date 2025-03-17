@@ -1,118 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<title>歌姬の下载网站</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资源下载</title>
-    <style>
-        /* 基础样式 */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 公告栏样式 */
-        #announcement {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        /* 文件列表样式 */
-        .file-list {
-            display: grid;
-            gap: 15px;
-        }
-
-        .file-item {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr auto;
-            align-items: center;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-
-        .file-item:hover {
-            transform: translateY(-2px);
-        }
-
-        .download-btn {
-            padding: 8px 16px;
-            background: var(--secondary-color);
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .download-btn:hover {
-            opacity: 0.9;
-        }
-    </style>
 </head>
 <body>
-    <!-- 公告区域 -->
-    <div id="announcement"></div>
+    <h2><b>歌姬の下载网站</b></h2>
+    <h3>公告</h3>
+    <p>下载网站</p>
+    <hr>
+    <!--下载链接-->
+    <a href="./downloads/lua.exe">lua</a>
+    <a href="./downloads/rar.exe">rar</a>
+    <a href="./downloads/geek.exe">geek</a>
+    <a href="./downloads/JiYuTrainer.exe">JiYu破解</a>
 
-    <!-- 文件列表 -->
-    <h2>可用下载（共 <span id="file-count">0</span> 个文件）</h2>
-    <div id="file-list" class="file-list"></div>
 
-    <script>
-        // 动态加载内容
-        async function loadContent() {
-            try {
-                // 加载公告
-                const announcement = await fetch('announcement.md');
-                document.getElementById('announcement').innerHTML = 
-                    marked.parse(await announcement.text());
 
-                // 加载文件列表
-                const fileList = await fetch('downloads-data.json');
-                const files = await fileList.json();
-                renderFileList(files);
-            } catch (error) {
-                console.error('加载失败:', error);
-            }
-        }
+    <hr><br>
+    <a href="https://space.bilibili.com/2061188238">劈里啪啦链接</a>
 
-        // 渲染文件列表
-        function renderFileList(files) {
-            const container = document.getElementById('file-list');
-            document.getElementById('file-count').textContent = files.length;
-
-            container.innerHTML = files.map(file => `
-                <div class="file-item">
-                    <div>
-                        <strong>${file.name}</strong>
-                        <div class="file-meta">${file.type} • ${file.size}</div>
-                    </div>
-                    <div>${file.lastModified}</div>
-                    <div>版本 ${file.version}</div>
-                    <a href="downloads/${file.name}" 
-                       class="download-btn"
-                       download="${file.name}">
-                        ↓ 下载
-                    </a>
-                </div>
-            `).join('');
-        }
-
-        // 初始化
-        window.addEventListener('DOMContentLoaded', loadContent);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
