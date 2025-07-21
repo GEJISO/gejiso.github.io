@@ -8,8 +8,12 @@
 
 
         
-        <h1  style="font-size: 42px;" id="牢鹅">想念牢鹅第0天</h1><br>
-        <button id="button-" style="width: 150px; height: 60px;font-size: 32px;" onclick="button()">暂停刷新</button><br>
+        
+        <h1  style="font-size: 42px;" id="牢鹅">想念牢鹅第0天</h1>
+        <h1  style="font-size: 42px;" id="剩余">今天还剩下0h 0m 0s.0ms</h1><br>
+        <button id="button-" style="width: 150px; height: 60px;font-size: 32px;" onclick="button()">暂停刷新</button>
+        <button style="width: 150px; height: 60px;font-size: 32px;" onclick="copy()">复制</button><br>
+        
         <a href="../../index.html" style="font-size: 32px;">GET OUT!</a>
 
 
@@ -23,8 +27,18 @@
 
             function update(){
                 if(flash){
-                    let tt=(Date.now()/1000-time)/86400;
+                    tt=(Date.now()/1000-time)/86400;
                     document.getElementById("牢鹅").innerHTML=`想念牢鹅第${tt}天`;
+                    
+                    //剩余时间：
+                    var timer=new Date
+                    var hours=23-timer.getHours()
+                    var minutes=59-timer.getMinutes()
+                    var seconds=59-timer.getSeconds()
+                    var milliseconds=999-timer.getMilliseconds()
+
+                    document.getElementById("剩余").innerHTML=`今天还剩下${hours}时 ${minutes}分 ${seconds}.${milliseconds}毫秒`
+
                 }
             }
 
@@ -38,8 +52,16 @@
                     document.getElementById("button-").innerHTML="暂停刷新";
                     flash=true;
                 }
-
             }
+
+            function copy(){
+                //引用update()时间
+                var text=`想念牢鹅第${tt}天`;
+                navigator.clipboard.writeText(text);
+                alert(`复制成功：${text}`)
+                
+            }
+
         </script>
     </body>
 </html>
