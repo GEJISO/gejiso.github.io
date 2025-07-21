@@ -9,17 +9,36 @@
 
         
         <h1  style="font-size: 42px;" id="牢鹅">想念牢鹅第0天</h1><br>
-        <a href="../../index.html" style="font-size: 42px;">GET OUT!</a>
+        <button id="button-" style="width: 150px; height: 60px;font-size: 32px;" onclick="button()">暂停刷新</button><br>
+        <a href="../../index.html" style="font-size: 32px;">GET OUT!</a>
 
 
 
         <script>
             const time=1752422400;
+            
+            let flash=true;
             setInterval(update,1);
-            update()
+            update();
+
             function update(){
-                let tt=(Date.now()/1000-time)/86400;
-                document.getElementById("牢鹅").innerHTML=`想念牢鹅第${tt}天`;
+                if(flash){
+                    let tt=(Date.now()/1000-time)/86400;
+                    document.getElementById("牢鹅").innerHTML=`想念牢鹅第${tt}天`;
+                }
+            }
+
+            function button(){
+                if(flash){
+                    document.getElementById("button-").innerHTML="启用刷新";
+                    flash=false;
+                }
+                else
+                {
+                    document.getElementById("button-").innerHTML="暂停刷新";
+                    flash=true;
+                }
+
             }
         </script>
     </body>
