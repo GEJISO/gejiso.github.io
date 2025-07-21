@@ -21,7 +21,7 @@
     <script>
         //加载网址列表
         var x=new XMLHttpRequest()
-        x.open("GET","./index-cof.json",true);
+        x.open("GET","./index-cof.json",false);
 
         x.onreadystatechange=function(){
             if(x.readyState===4 && x.status===200){
