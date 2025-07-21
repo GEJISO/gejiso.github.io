@@ -11,35 +11,13 @@
         <p id="timer" style="text-align:center;font-size: 24px;">timer</p>
     
         <hr>
-        <p id="code">加载网址列表...</p>
         <div id="website" style="text-align:center;font-size: 20px;">
-            
+            <a href="./Other/牢鹅/index.html">视奸牢鹅</a>
         </div>
     
 
 
     <script>
-        //加载网址列表
-        var x=new XMLHttpRequest()
-        x.open("GET","./index-cof.json",false);
-
-        x.onreadystatechange=function(){
-            if(x.readyState===4 && x.status===200){
-                document.getElementById("code").remove()
-                var div=document.getElementById("website");
-                website=JSON.parse(x.responseText)
-
-                for (site in website){
-                    var node=document.createElement("a");
-                    node.appendChild(document.createTextNode(site));
-                    node.href=website[site];
-                    div.appendChild(node);div.appendChild(document.createElement("br"));
-                }
-            //失败返回错误代码
-            }else{
-                document.getElementById("code").innerHTML="readyState:"+x.readyState+"\nstatus:"+x.status;
-            }
-        }
 
 
         //timer
