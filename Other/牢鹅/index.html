@@ -20,16 +20,20 @@
 
         <script>
             const time=1752422400;
-            
+            const newtime=1754020800
             let flash=true;
             setInterval(update,1);
             update();
 
             function update(){
                 if(flash){
-                    tt=(Date.now()/1000-time)/86400;
-                    document.getElementById("牢鹅").innerHTML=`想念牢鹅第${tt}天`;
-                    
+                    if(Date.now()/1000 < newtime){
+                        tt=(Date.now()/1000-time)/86400;
+                        document.getElementById("牢鹅").innerHTML=`想念牢鹅第${tt}天`;
+                    }else{
+                        ntt=(Date.now()/1000-newtime)/86400
+                        document.getElementById("牢鹅").innerHTML=`牢鹅复活了，一共想念了牢鹅${ntt}天`
+                    }
                     //剩余时间：
                     var timer=new Date
                     var hours=23-timer.getHours()

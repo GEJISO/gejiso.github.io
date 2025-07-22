@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <head>
+        <title>想念牢鹅</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+
+        
+        
+        <h1  style="font-size: 42px;" id="牢鹅">牢鹅即将复活：0天</h1>
+        <h1 style="font-size: 32;">大的就要来了</h1>
+        <h2 style="font-size: 24;" id="hms">11-22-33</h2>
+        <h2 style="font-size: 24;" id="h">0时</h2>
+        <h2 style="font-size: 24;" id="m">0分</h2>
+        <h2 style="font-size: 24;" id="s">0秒</h2>
+        <button id="button-" style="width: 150px; height: 60px;font-size: 32px;" onclick="button()">暂停刷新</button>
+        <button style="width: 150px; height: 60px;font-size: 32px;" onclick="copy()">复制</button><br>
+        
+        <a href="../../index.html" style="font-size: 32px;">GET OUT!</a>
+
+
+
+        <script>
+            const time=1754020800;
+            
+            let flash=true;
+            setInterval(update,1);
+            update();
+
+            function update(){
+                if(flash){
+                    if(Date.now()/1000 < time){
+                        tt=(time-Date.now()/1000)/86400;
+                        tts=(time-Date.now()/1000);
+                        tth=(time-Date.now()/1000)/360;
+                        ttm=(time-Date.now()/1000)/60;
+                        document.getElementById("牢鹅").innerHTML=`牢鹅即将复活：${tt}天`;
+                        document.getElementById("s").innerHTML=`秒${tts}`;
+                        document.getElementById("h").innerHTML=`时${tth}`;
+                        document.getElementById("m").innerHTML=`分${ttm}`;
+                        theh=parseInt((time-Date.now()/1000)/3600)
+                        thelasts=parseInt((time-Date.now()/1000)%3600)
+                        them=parseInt(thelasts/60)
+                        thes=thelasts%60
+
+                        document.getElementById("hms").innerHTML=`${theh}时${them}分${thes}秒`
+                    }
+                    else
+                    {
+                        document.getElementById("牢鹅").innerHTML=`大的来了`;
+                        document.getElementById("s").innerHTML=`大的来了`;
+                    }
+
+                }
+            }
+
+            function button(){
+                if(flash){
+                    document.getElementById("button-").innerHTML="启用刷新";
+                    flash=false;
+                }
+                else
+                {
+                    document.getElementById("button-").innerHTML="暂停刷新";
+                    flash=true;
+                }
+            }
+
+            function copy(){
+                //引用update()时间
+                var text=`牢鹅即将复活：${tt}天`;
+                navigator.clipboard.writeText(text);
+                alert(`复制成功：${text}`)
+                
+            }
+
+        </script>
+    </body>
+</html>
